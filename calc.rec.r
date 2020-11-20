@@ -157,21 +157,25 @@ belm$Year <- as.factor(belm$Year)
 enwm$Year <- as.factor(enwm$Year)
 
 fig.rus.dx <- ggplot(rusm, aes(Age, dx, col=Year, linetype=Year, group=Year))+ylim(0, 5000)+
-     geom_line()+ggtitle("Male, Russia")+ylab("d(x)")+
-     annotate(geom="text", 40, 4800, label=expression(paste("1990: ", e^{'+'},"=14.70, REC=0.53")), size=4)+
-     annotate(geom="text", 40, 4400, label=expression(paste("1995: ", e^{'+'},"=15.86, REC=0.62")), size=4)
+    geom_line()+ggtitle("Male, Russia")+ylab("d(x)")+theme(legend.position="")+
+    annotate(geom="text", 55, 4850, label=expression(paste(e^{'+'},"=14.70, REC=0.53")), size=3.2)+
+    annotate(geom="text", 55, 4450, label=expression(paste(e^{'+'},"=15.86, REC=0.62")), size=3.2)+
+    theme(legend.position=c(.2, .9), legend.background = element_blank(), legend.title=element_blank())
 fig.jpn.dx <- ggplot(jpnf, aes(Age, dx, col=Year, linetype=Year, group=Year))+ylim(0, 5000)+
-     geom_line()+ggtitle("Female, Japan")+ ylab("d(x)")+
-     annotate(geom="text", 40, 4800, label=expression(paste("1990: ", e^{'+'},"=9.29, REC=0.53")), size=4)+
-     annotate(geom="text", 40, 4400, label=expression(paste("1995: ", e^{'+'},"=9.42, REC=0.52")), size=4)
+    geom_line()+ggtitle("Female, Japan")+ ylab("d(x)")+theme(legend.position="")+
+    annotate(geom="text", 55, 4850, label=expression(paste(e^{'+'},"=9.29, REC=0.53")), size=3.2)+
+    annotate(geom="text", 55, 4450, label=expression(paste(e^{'+'},"=9.42, REC=0.52")), size=3.2)+
+    theme(legend.position=c(.2, .9), legend.background = element_blank(), legend.title=element_blank())
 fig.bel.dx <- ggplot(belm, aes(Age, dx, col=Year, linetype=Year, group=Year))+ylim(0, 5000)+
-     geom_line()+ggtitle("Male, Belgium")+ ylab("d(x)")+
-     annotate(geom="text", 40, 4800, label=expression(paste("1960: ", e^{'+'},"=13.56, REC=0.46")), size=4)+
-     annotate(geom="text", 40, 4400, label=expression(paste("1965: ", e^{'+'},"=13.12, REC=0.51")), size=4)
+    geom_line()+ggtitle("Male, Belgium")+ ylab("d(x)")+theme(legend.position="")+
+    annotate(geom="text", 55, 4850, label=expression(paste(e^{'+'},"=13.56, REC=0.46")), size=3.2)+
+    annotate(geom="text", 55, 4450, label=expression(paste(e^{'+'},"=13.12, REC=0.51")), size=3.2)+
+    theme(legend.position=c(.2, .9), legend.background = element_blank(), legend.title=element_blank())
 fig.enw.dx <- ggplot(enwm, aes(Age, dx, col=Year, linetype=Year, group=Year))+ylim(0, 5000)+
-     geom_line()+ggtitle("Male, England & Wales")+ ylab("d(x)")+
-     annotate(geom="text", 40, 4800, label=expression(paste("2000: ", e^{'+'},"=10.80, REC=0.56")), size=4)+
-     annotate(geom="text", 40, 4400, label=expression(paste("2005: ", e^{'+'},"=10.59, REC=0.52")), size=4)
+     geom_line()+ggtitle("Male, England & Wales")+ ylab("d(x)")+theme(legend.position="")+
+     annotate(geom="text", 55, 4850, label=expression(paste(e^{'+'},"=10.80, REC=0.56")), size=3.2)+
+    annotate(geom="text", 55, 4450, label=expression(paste(e^{'+'},"=10.59, REC=0.52")), size=3.2)+
+    theme(legend.position=c(.2, .9), legend.background = element_blank(), legend.title=element_blank())
 
 ggarrange(fig.rus.dx, fig.jpn.dx, fig.bel.dx, fig.enw.dx, labels=LETTERS[1:4], nrow=2, ncol=2, common.legend=T)
 
